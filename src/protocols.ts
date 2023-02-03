@@ -1,3 +1,6 @@
+import { Hotel, Room } from "@prisma/client";
+import { type } from "os";
+
 export type ApplicationError = {
   name: string;
   message: string;
@@ -30,3 +33,25 @@ export type RequestError = {
   name: string,
   message: string,
 };
+
+export type Hotels = Hotel;
+
+// {
+//   id: number,
+//   name: string,
+//   image: string,
+//   createdAt: string,
+//   updatedAt: string,
+//   Rooms: [
+//     {
+//       id: number,
+//       name: string,
+//       capacity: number,
+//       hotelId: hotelWithRooms.Rooms[0].hotelId,
+//       createdAt: hotelWithRooms.Rooms[0].createdAt.toISOString(),
+//       updatedAt: hotelWithRooms.Rooms[0].updatedAt.toISOString(),
+//     }
+//   ]
+// }
+
+export type Rooms = Room;
