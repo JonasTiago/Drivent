@@ -12,7 +12,6 @@ export async function getHotels(req: AuthenticatedRequest, res: Response) {
         if (err.name === "NotFoundError") {
             return res.sendStatus(httpStatus.NOT_FOUND);
         }
-        return res.sendStatus(httpStatus.BAD_REQUEST);
     }
 }
 
