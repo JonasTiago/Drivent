@@ -19,7 +19,7 @@ export async function getHotels(req: AuthenticatedRequest, res: Response) {
 export async function getRomsHotel(req: AuthenticatedRequest, res: Response) {
     const userId: number = req.userId;
     const hotelId: number = Number(req.params.hotelId);
-
+    
     try {
         const romsHotel = await hotelsService.getRomsByIdHotel(hotelId, userId);
         return res.send(romsHotel);
@@ -27,5 +27,6 @@ export async function getRomsHotel(req: AuthenticatedRequest, res: Response) {
         if (err.name === "NotFoundError") {
             return res.sendStatus(httpStatus.NOT_FOUND);
         }
+        return res.sendStatus(httpStatus.PAYMENT_REQUIRED);
     }
 }
