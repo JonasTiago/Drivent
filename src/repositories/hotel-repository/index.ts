@@ -1,8 +1,7 @@
 import { prisma } from "@/config";
 
 async function findAllHotels() {
-    const data = await prisma.hotel.findMany();
-    return data;
+    return await prisma.hotel.findMany({});
 };
 
 async function  findRomsByHotelId(id:number) {
